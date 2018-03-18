@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http.Filters;
-using DvTelIntegradorCamaras.Exceptions;
-using DvTelIntegradorCamaras.Models;
-namespace DvTelIntegradorCamaras.Filters
+using Newtonsoft.Json;
+using SGTH.Dvtel.Rest.Exceptions;
+using SGTH.Dvtel.Rest.Models;
+
+namespace SGTH.Dvtel.Rest.Filters
 {
     public class ValidacionesExcepcionesHandler : ExceptionFilterAttribute
     {

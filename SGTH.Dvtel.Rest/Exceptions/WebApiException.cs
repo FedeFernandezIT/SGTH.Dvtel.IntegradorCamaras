@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Configuration;
 using System.Net;
-using System.Net.Http;
-using System.Text;
-using Newtonsoft.Json;
-namespace DvTelIntegradorCamaras.Exceptions
+
+namespace SGTH.Dvtel.Rest.Exceptions
 {
     public class WebApiException : Exception
     {

@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using Newtonsoft.Json;
 using DVTel.API;
-using DVTel.API.Entities.Physical;
-using DVTel.API.Entities.SystemObjects;
-using DVTel.Common.AssemblyLoader;
-using DvTelIntegradorCamaras.Integrador;
-using DvTelIntegradorCamaras.Models;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
+using SGTH.Dvtel.Rest.Integrador;
+using SGTH.Dvtel.Rest.Models;
 
-namespace DvTelIntegradorCamaras.Controllers
+namespace SGTH.Dvtel.Rest.Controllers
 {
     [System.Web.Http.Authorize]
     public class CamaraController : ApiController

@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DvTelIntegradorCamaras", "DvTelIntegradorCamaras\DvTelIntegradorCamaras.csproj", "{8D299167-4FC8-47EA-9C22-0528A3A2493C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apidoc", "Apidoc", "{B5C58FC3-7B0F-4405-9521-ADCD5635AEF3}"
 	ProjectSection(SolutionItems) = preProject
 		apidoc.json = apidoc.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGTH.Dvtel.Rest", "SGTH.Dvtel.Rest\SGTH.Dvtel.Rest.csproj", "{8D299167-4FC8-47EA-9C22-0528A3A2493C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0625D312-D33B-483F-BEBA-A134B94D0975}
 	EndGlobalSection
 EndGlobal

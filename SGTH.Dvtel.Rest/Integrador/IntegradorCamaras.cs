@@ -1,30 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web;
-using System.Web.Http;
 using DVTel.API;
 using DVTel.API.Entities.Physical;
 using DVTel.API.Entities.Physical.Enums;
 using DVTel.API.Entities.SystemObjects;
 using DVTel.Common.AssemblyLoader;
-using Newtonsoft.Json;
-using DvTelIntegradorCamaras.Models;
-using System.Drawing;
-using System.Configuration;
-using DVTel.API.Entities.AVT;
-using System.Net.Http.Headers;
-using System.Xml;
-using System.Diagnostics;
-using System.Security;
-using System.Threading;
-using System.Runtime.Caching;
-using System.Threading.Tasks;
-using System.IO;
-using DvTelIntegradorCamaras.Helpers;
-namespace DvTelIntegradorCamaras.Integrador
+using SGTH.Dvtel.Rest.Models;
+
+//TODO No se encuentra namespace
+//using DvTelIntegradorCamaras.Helpers;
+namespace SGTH.Dvtel.Rest.Integrador
 {
     public class IntegradorCamaras : IIntegradorCamaras
     {
@@ -849,8 +837,10 @@ namespace DvTelIntegradorCamaras.Integrador
 
                         /*var client = new WebClient();
                         client.DownloadFileAsync(new Uri(path.FullName), @"c:\" + path.Name);*/
-                        var objUtils = new Utils();
-                        objUtils.Download(path.FullName);
+
+                        // TODO: Se comenta porque no se encuentra el objeto Utils.cs en el namespace DvTelIntegradorCamaras.Helpers
+                        //var objUtils = new Utils();
+                        //objUtils.Download(path.FullName);
                     }
                     return ResponseMethod(CodeStatus.OK, "", null);
                 }

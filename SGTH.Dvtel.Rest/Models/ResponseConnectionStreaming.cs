@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace DvTelIntegradorCamaras.Models
+namespace SGTH.Dvtel.Rest.Models
 {
     public class ResponseConnectionStreaming
     {

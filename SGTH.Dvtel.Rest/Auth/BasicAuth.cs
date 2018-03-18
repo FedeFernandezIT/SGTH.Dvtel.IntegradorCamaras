@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Configuration;
 using System.Net.Http.Headers;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Web;
-using DvTelIntegradorCamaras.Integrador;
+using SGTH.Dvtel.Rest.Integrador;
 
-namespace DvTelIntegradorCamaras.Auth
+namespace SGTH.Dvtel.Rest.Auth
 {
     public class BasicAuth : IHttpModule
     {

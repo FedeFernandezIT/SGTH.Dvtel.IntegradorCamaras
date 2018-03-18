@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net.Http.Headers;
 using System.Web.Http;
-using Newtonsoft.Json.Serialization;
-using System.Net.Http.Headers;
+using SGTH.Dvtel.Rest.Filters;
 //using System.Web.Http.Cors;
-using System.Web.Http.Routing;
-using WebApi.Hal;
-using DvTelIntegradorCamaras.Filters;
-namespace DvTelIntegradorCamaras.App_Start
+
+namespace SGTH.Dvtel.Rest
 {
     public static class WebApiConfig
     {

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using DVTel.API;
-using DVTel.API.Application.Common.Driver;
-using DVTel.API.Entities.Physical.Enums;
-using DvTelIntegradorCamaras.Exceptions;
 
-namespace DvTelIntegradorCamaras.Models
+namespace SGTH.Dvtel.Rest.Models
 {
     public class PTZDevice
     {
@@ -45,6 +38,10 @@ namespace DvTelIntegradorCamaras.Models
         public bool isViewable { get; set; }
         public object supportedEvents { get; set; }
         public geoLocation geographicLocation { get; set; }
+        public string firmware { get; set; }
+        public string model { get; set; }
+        public string pluginName { get; set; }
+        public string pluginVersion { get; set; }
 
 
         public class geoLocation
