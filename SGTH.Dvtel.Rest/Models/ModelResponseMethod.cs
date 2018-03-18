@@ -2,15 +2,15 @@
 {
     public class ModelResponseMethod
     {
-        public string status { get; set; }
-        public string msg { get; set; }
-        public object data { get; set; }
+        public string Status { get; set; }
+        public string Msg { get; set; }
+        public object Data { get; set; }
     }
     public static class CodeStatus
     {
         public const string OK_STRING = "Ok";
         public const string ERROR = "Error";
-        public const string OK = "200";//Unauthorized
+        public const string OK = "200";
         public const string UNAUTHORIZED = "401";
         public const string NOT_FOUND = "404";
         public const string METHOD_NOT_ALLOWED = "405";

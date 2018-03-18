@@ -11,7 +11,7 @@ namespace SGTH.Dvtel.Rest
         {
 
             config.Filters.Add(new ValidacionesExcepcionesHandler());
-            config.MessageHandlers.Add(new LogRequestResponseFilter());
+            //config.MessageHandlers.Add(new LogRequestResponseFilter());
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));

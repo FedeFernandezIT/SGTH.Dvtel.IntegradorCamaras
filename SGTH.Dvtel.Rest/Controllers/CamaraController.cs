@@ -2,12 +2,14 @@
 using System.Net;
 using System.Web.Http;
 using DVTel.API;
+using SGTH.Dvtel.Rest.Filters;
 using SGTH.Dvtel.Rest.Integrador;
 using SGTH.Dvtel.Rest.Models;
 
 namespace SGTH.Dvtel.Rest.Controllers
 {
-    [System.Web.Http.Authorize]
+    [Authorize]
+    [ModuloVBasicAuthentication(Realm = "API REST Seguritech - Dvtel")]
     public class CamaraController : ApiController
     {
         private readonly IntegradorCamaras _integrador;
@@ -18,42 +20,42 @@ namespace SGTH.Dvtel.Rest.Controllers
         }
         public object ResultMethod(ModelResponseMethod result)
         {
-            switch (result.status)
+            switch (result.Status)
             {
                 case "200":
                     return Content(HttpStatusCode.OK, new ModelResponseMethod
                     {
-                        msg = result.msg,
-                        status = CodeStatus.OK_STRING,
-                        data = result.data
+                        Msg = result.Msg,
+                        Status = CodeStatus.OK_STRING,
+                        Data = result.Data
                     });
                 case "401":
                     return Content(HttpStatusCode.Unauthorized, new ModelResponseMethod
                     {
-                        msg = result.msg,
-                        status = CodeStatus.ERROR,
-                        data = null
+                        Msg = result.Msg,
+                        Status = CodeStatus.ERROR,
+                        Data = null
                     });
                 case "404":
                     return Content(HttpStatusCode.NotFound, new ModelResponseMethod
                     {
-                        msg = result.msg,
-                        status = CodeStatus.ERROR,
-                        data = null
+                        Msg = result.Msg,
+                        Status = CodeStatus.ERROR,
+                        Data = null
                     });
                 case "405":
                     return Content(HttpStatusCode.MethodNotAllowed, new ModelResponseMethod
                     {
-                        msg = result.msg,
-                        status = CodeStatus.ERROR,
-                        data = null
+                        Msg = result.Msg,
+                        Status = CodeStatus.ERROR,
+                        Data = null
                     });;
                 default:
                     return Content(HttpStatusCode.InternalServerError, new ModelResponseMethod
                     {
-                        msg = result.msg,
-                        status = CodeStatus.ERROR,
-                        data = null
+                        Msg = result.Msg,
+                        Status = CodeStatus.ERROR,
+                        Data = null
                     });
             }
         }

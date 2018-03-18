@@ -808,9 +808,9 @@ namespace SGTH.Dvtel.Rest.Integrador
                         FileToWfDvtel(".evc", guid, directoryCompartido, pathSnapshot, fromDate, toDate);
                         objResponseExportVideo.idExportSession = guidAleatorio;
                         objResponseExportVideo.path = null;
-                        objModelResponseMethod.status = CodeStatus.OK;
-                        objModelResponseMethod.msg = string.Empty;
-                        objModelResponseMethod.data = objResponseExportVideo;
+                        objModelResponseMethod.Status = CodeStatus.OK;
+                        objModelResponseMethod.Msg = string.Empty;
+                        objModelResponseMethod.Data = objResponseExportVideo;
                         return ResponseMethod(CodeStatus.OK, string.Empty, objResponseExportVideo);                        
                     }
                     return ResponseMethod(CodeStatus.NOT_FOUND, "Video no encontrado con esos parámetros", null);
@@ -940,9 +940,9 @@ namespace SGTH.Dvtel.Rest.Integrador
         public ModelResponseMethod ResponseMethod(string codeStatus, string message, object result)
         {
             Logout();
-            objModelResponseMethod.status = codeStatus;
-            objModelResponseMethod.msg = message;
-            objModelResponseMethod.data = result;
+            objModelResponseMethod.Status = codeStatus;
+            objModelResponseMethod.Msg = message;
+            objModelResponseMethod.Data = result;
             return objModelResponseMethod;
         }
         /// <summary>

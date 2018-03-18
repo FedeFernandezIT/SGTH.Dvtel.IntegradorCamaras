@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apidoc", "Apidoc", "{B5C58F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGTH.Dvtel.Rest", "SGTH.Dvtel.Rest\SGTH.Dvtel.Rest.csproj", "{8D299167-4FC8-47EA-9C22-0528A3A2493C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API Rest", "API Rest", "{806822A4-1743-432C-A4A6-B2622790C585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGTH.Dvtel.Rest.Tests", "SGTH.Dvtel.Rest.Tests\SGTH.Dvtel.Rest.Tests.csproj", "{464647D5-F327-459E-AD18-764EB8E61F6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +24,17 @@ Global
 		{8D299167-4FC8-47EA-9C22-0528A3A2493C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D299167-4FC8-47EA-9C22-0528A3A2493C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D299167-4FC8-47EA-9C22-0528A3A2493C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{464647D5-F327-459E-AD18-764EB8E61F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464647D5-F327-459E-AD18-764EB8E61F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464647D5-F327-459E-AD18-764EB8E61F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464647D5-F327-459E-AD18-764EB8E61F6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D299167-4FC8-47EA-9C22-0528A3A2493C} = {806822A4-1743-432C-A4A6-B2622790C585}
+		{464647D5-F327-459E-AD18-764EB8E61F6E} = {806822A4-1743-432C-A4A6-B2622790C585}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0625D312-D33B-483F-BEBA-A134B94D0975}
