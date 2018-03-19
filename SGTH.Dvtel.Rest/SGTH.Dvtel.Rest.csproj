@@ -188,7 +188,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\AddChallengeOnUnauthorizeResult.cs" />
     <Compile Include="Results\AuthenticationFailureResult.cs" />
+    <Compile Include="Services\DvtelMobileAdapter.cs" />
     <Compile Include="Services\DvtelMobileService.cs" />
+    <Compile Include="Services\IDvtelMobileAdapter.cs" />
     <Compile Include="Services\IDvtelMobileService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +226,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SGTH.Dvtel.Mobile.Client\SGTH.Dvtel.Mobile.Client.csproj">
+      <Project>{5336b47a-8113-48ba-a067-c6d9394d9fb0}</Project>
+      <Name>SGTH.Dvtel.Mobile.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
