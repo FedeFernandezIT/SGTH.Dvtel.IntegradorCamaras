@@ -33,16 +33,16 @@ namespace SGTH.Dvtel.Rest.Tests.Controllers
         }
 
         [TestMethod]
-        public void GetStartLive_Test()
+        public async Task GetStartLive_Test()
         {
             // Arrange
             var mockMobile = new Mock<IDvtelMobileService>();
             mockMobile.Setup(x => x.StartLive(It.IsAny<Guid>(), It.IsAny<Guid>(), It.IsAny<string>()))
-                .Returns(new Uri("http://localhost:8081/live"));
+                .ReturnsAsync(new Uri("http://localhost:8081/live"));
 
             // Act
             var controller = new ViewingController(mockMobile.Object);
-            IHttpActionResult actionResult = controller.StartLive(Guid.NewGuid(), Guid.NewGuid());
+            IHttpActionResult actionResult = await controller.StartLive(Guid.NewGuid(), Guid.NewGuid());
             var contentResult = actionResult as OkNegotiatedContentResult<ModelResponseMethod>;
 
             // Assert
@@ -97,7 +97,7 @@ namespace SGTH.Dvtel.Rest.Tests.Controllers
             Assert.IsNotNull(contentResult);
             Assert.IsNotNull(contentResult.Content);
             Assert.IsInstanceOfType(contentResult.Content.Data, typeof(List<Camera>));
-            Assert.AreEqual(2, ((List<Camera>) contentResult.Content.Data).Count);
+            Assert.AreEqual(2, ((List<Camera>)contentResult.Content.Data).Count);
         }
     }
 }

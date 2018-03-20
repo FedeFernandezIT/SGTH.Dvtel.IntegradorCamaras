@@ -30,9 +30,9 @@ namespace SGTH.Dvtel.Rest.Controllers
 
         [HttpGet]
         [Route("startlive/{camera:guid}/{session:guid}")]
-        public IHttpActionResult StartLive(Guid camera, Guid session)
+        public async Task<IHttpActionResult> StartLive(Guid camera, Guid session)
         {
-            Uri url = _mobile.StartLive(camera, session, "mjpeg");
+            Uri url = await _mobile.StartLive(camera, session, "mjpeg");
             return Ok(new ModelResponseMethod
             {
                 Status = CodeStatus.OK,

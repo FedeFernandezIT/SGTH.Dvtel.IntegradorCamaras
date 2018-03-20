@@ -65,11 +65,42 @@ namespace SGTH.Dvtel.Rest.Tests.Services
             // Arrange
             Mock<IDvtelMobileAdapter> mockMobile = new Mock<IDvtelMobileAdapter>();
             mockMobile.Setup(mbl => mbl.Authenticate()).ReturnsAsync(false);
-            
+
 
             // Act
             DvtelMobileService srv = new DvtelMobileService(mockMobile.Object);
-            List<Camera> cameras = await srv.GetCameras();            
+            List<Camera> cameras = await srv.GetCameras();
+        }
+
+        [TestMethod]
+        public async Task StartLive_Sucess_Test()
+        {
+            // Arrange
+            Mock<IDvtelMobileAdapter> mockMobile = new Mock<IDvtelMobileAdapter>();
+            mockMobile.Setup(mbl => mbl.Authenticate()).ReturnsAsync(true);
+            mockMobile.Setup(mbl => mbl.StartLive(It.IsAny<Guid>(), "mjpeg")).ReturnsAsync("http://localhost:8081/live/test");
+
+            // Act
+            DvtelMobileService srv = new DvtelMobileService(mockMobile.Object);
+            Uri url = await srv.StartLive(Guid.NewGuid(), Guid.NewGuid(), "mjpeg");
+
+            // Assert
+            Assert.IsNotNull(url);
+            Assert.AreEqual(Uri.UriSchemeHttp ,url.Scheme);
+            Assert.AreEqual("http://localhost:8081/live/test", url.AbsoluteUri);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public async Task StartLive_AuthenticationFailed_Test()
+        {
+            // Arrange
+            Mock<IDvtelMobileAdapter> mockMobile = new Mock<IDvtelMobileAdapter>();
+            mockMobile.Setup(mbl => mbl.Authenticate()).ReturnsAsync(false);            
+
+            // Act
+            DvtelMobileService srv = new DvtelMobileService(mockMobile.Object);
+            Uri url = await srv.StartLive(Guid.NewGuid(), Guid.NewGuid(), "mjpeg");            
         }
     }
 }

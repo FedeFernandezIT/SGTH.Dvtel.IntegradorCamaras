@@ -17,20 +17,32 @@ namespace SGTH.Dvtel.Rest.Services
         public DvtelMobileService(IDvtelMobileAdapter mobile)
         {
             _mobile = mobile;
+            //IsAuthenticated = IsAuthenticatedAsync();
         }
 
-        public Uri StartLive(Guid camera, Guid session, string compression)
-        {
-            return new Uri("http://localhost:8081/live/test");
-        }        
+        public Task<bool> IsAuthenticated { get; private set; }
 
-        public async Task<List<Camera>> GetCameras()
+        private async Task<bool> IsAuthenticatedAsync()
+        {
+            return await _mobile.Authenticate();
+        }
+
+        public async Task<Uri> StartLive(Guid camera, Guid session, string compression)
         {
             if (!await _mobile.Authenticate())
             {
                 throw new Exception();
             }
+            var streamUrLive = await _mobile.StartLive(camera, compression);
+            return new Uri(streamUrLive);
+        }
 
+        public async Task<List<Camera>> GetCameras()
+        {            
+            if (!await _mobile.Authenticate())
+            {
+                throw new Exception();
+            }
             return _mobile.Cameras;
         }
     }
