@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using SGTH.Dvtel.Mobile.Client.MobileMiddlewareObjects;
 
@@ -27,13 +28,14 @@ namespace SGTH.Dvtel.Rest.Services
             return await _mobile.Authenticate();
         }
 
-        public async Task<Uri> StartLive(Guid camera, Guid session, string compression)
+        public async Task<Uri> StartLive(Guid camera, string compression)
         {
             if (!await _mobile.Authenticate())
             {
                 throw new Exception();
             }
             var streamUrLive = await _mobile.StartLive(camera, compression);
+            await _mobile.Logout();
             return new Uri(streamUrLive);
         }
 
@@ -43,7 +45,13 @@ namespace SGTH.Dvtel.Rest.Services
             {
                 throw new Exception();
             }
-            return _mobile.Cameras;
+
+            // Generamos un nueva List, para no perder los datos
+            // después de desconectarnos.
+            var cameras = _mobile.Cameras.ToList();
+
+            await _mobile.Logout();
+            return cameras;
         }
     }
 }

@@ -82,7 +82,7 @@ namespace SGTH.Dvtel.Rest.Tests.Services
 
             // Act
             DvtelMobileService srv = new DvtelMobileService(mockMobile.Object);
-            Uri url = await srv.StartLive(Guid.NewGuid(), Guid.NewGuid(), "mjpeg");
+            Uri url = await srv.StartLive(Guid.NewGuid(), "mjpeg");
 
             // Assert
             Assert.IsNotNull(url);
@@ -100,7 +100,7 @@ namespace SGTH.Dvtel.Rest.Tests.Services
 
             // Act
             DvtelMobileService srv = new DvtelMobileService(mockMobile.Object);
-            Uri url = await srv.StartLive(Guid.NewGuid(), Guid.NewGuid(), "mjpeg");            
+            Uri url = await srv.StartLive(Guid.NewGuid(), "mjpeg");            
         }
     }
 }

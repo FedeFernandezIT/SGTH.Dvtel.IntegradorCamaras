@@ -49,9 +49,9 @@ namespace SGTH.Dvtel.Rest.Services
             return await _vms.Authenticate();
         }
 
-        public Task Logout()
+        public async Task Logout()
         {
-            throw new NotImplementedException();
+            await _vms.Logout();
         }
 
         public async Task GetCameras()

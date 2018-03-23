@@ -37,12 +37,12 @@ namespace SGTH.Dvtel.Rest.Tests.Controllers
         {
             // Arrange
             var mockMobile = new Mock<IDvtelMobileService>();
-            mockMobile.Setup(x => x.StartLive(It.IsAny<Guid>(), It.IsAny<Guid>(), It.IsAny<string>()))
+            mockMobile.Setup(x => x.StartLive(It.IsAny<Guid>(), It.IsAny<string>()))
                 .ReturnsAsync(new Uri("http://localhost:8081/live"));
 
             // Act
             var controller = new ViewingController(mockMobile.Object);
-            IHttpActionResult actionResult = await controller.StartLive(Guid.NewGuid(), Guid.NewGuid());
+            IHttpActionResult actionResult = await controller.StartLive(Guid.NewGuid());
             var contentResult = actionResult as OkNegotiatedContentResult<ModelResponseMethod>;
 
             // Assert

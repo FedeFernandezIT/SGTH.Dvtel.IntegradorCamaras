@@ -7,7 +7,7 @@ namespace SGTH.Dvtel.Rest.Services
 {
     public interface IDvtelMobileService
     {
-        Task<Uri> StartLive(Guid camera, Guid session, string compression);
+        Task<Uri> StartLive(Guid camera, string compression);
 
         Task<List<Camera>> GetCameras();
     }
