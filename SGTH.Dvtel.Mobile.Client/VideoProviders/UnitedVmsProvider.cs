@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Xml.Serialization;
+using SGTH.Dvtel.Mobile.Client.Exceptions;
 using SGTH.Dvtel.Mobile.Client.MobileMiddlewareObjects;
 
 namespace SGTH.Dvtel.Mobile.Client.VideoProviders
@@ -101,13 +102,15 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
                         return true; // Authenticated successfully
                     }
                     Utils.Trace("UnitedVmsProvider Authenticate Error: " + webResponse.Header.Error);
+                    throw new DvtelVmsException("Dvtel Vms Authenticate Error: " + webResponse.Header.Error, webResponse.Header.Error);
                 }
             }
             catch (Exception ex)
             {
                 Utils.Trace("UnitedVmsProvider Authenticate Error: " + ex.Message, ex);
+                throw new DvtelVmsException("Dvtel Vms Authenticate Error: " + ErrorType.Unknown, ex);
             }
-            return false; // Failed authenticating
+            throw new DvtelVmsException("Dvtel Vms Authenticate Error: Unserializable response.");            
         }
 
         public async Task Logout()
@@ -134,6 +137,7 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
                         else
                         {
                             Utils.Trace("UnitedVmsProvider Logout Error: " + webResponse.Header.Error);
+                            throw new DvtelVmsException("Dvtel Vms Logout Error: " + webResponse.Header.Error, webResponse.Header.Error);
                         }
                     }
                 }
@@ -141,6 +145,7 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
             catch (Exception ex)
             {
                 Utils.Trace("UnitedVmsProvider Logout Error", ex);
+                throw new DvtelVmsException("Dvtel Vms Logout Error", ex);
             }
         }
 
@@ -174,14 +179,14 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
                         }
                         else
                         {
-                            Utils.Trace("UnitedVmsProvider GetCameras Error: " + webResponse.Header.Error);
+                            Utils.Trace("UnitedVmsProvider GetCameras Error: " + webResponse.Header.Error);                            
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Utils.Trace("UnitedVmsProvider GetCameras Error", ex);
+                Utils.Trace("UnitedVmsProvider GetCameras Error", ex);               
             }
         }
 
@@ -218,14 +223,16 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
                             return webResponse.Body.LiveUrl.Url;
                         }
                         Utils.Trace("UnitedVmsProvider StartLive Error: " + webResponse.Header.Error);
+                        throw new DvtelVmsException("Dvtel Vms StartLive Error: " + webResponse.Header.Error, webResponse.Header.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
                 Utils.Trace("UnitedVmsProvider StartLive  Error", ex);
+                throw new DvtelVmsException("Dvtel Vms StartLive  Error", ex);
             }
-            return string.Empty;
+            throw new DvtelVmsException("Dvtel Vms StartLive Error: Unserializable response.");
         }
 
         /// <summary>

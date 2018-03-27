@@ -19,7 +19,7 @@ namespace SGTH.Dvtel.Rest.Services
 
         event EventHandler<List<Camera>> CameraListUpdated;
 
-        Task<bool> Authenticate();
+        Task Authenticate();
 
         Task Logout();
 

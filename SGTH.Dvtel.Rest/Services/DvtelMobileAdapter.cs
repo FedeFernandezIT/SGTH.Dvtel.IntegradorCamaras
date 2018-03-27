@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Threading.Tasks;
 using SGTH.Dvtel.Mobile.Client;
+using SGTH.Dvtel.Mobile.Client.Exceptions;
 using SGTH.Dvtel.Mobile.Client.MobileMiddlewareObjects;
 using SGTH.Dvtel.Mobile.Client.VideoProviders;
 
@@ -44,9 +45,12 @@ namespace SGTH.Dvtel.Rest.Services
 
         public event EventHandler<List<Camera>> CameraListUpdated;
 
-        public async Task<bool> Authenticate()
+        public async Task Authenticate()
         {
-            return await _vms.Authenticate();
+            if (!await _vms.Authenticate())
+            {
+                throw new DvtelVmsException("Dvtel Vms Provider Authenticate Error: " + ErrorType.Unknown);
+            }            
         }
 
         public async Task Logout()

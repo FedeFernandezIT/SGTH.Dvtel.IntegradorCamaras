@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consts.cs" />
+    <Compile Include="Exceptions\DvtelVmsException.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="MobileMiddlewareObjects\ArchiveStream.cs" />
     <Compile Include="MobileMiddlewareObjects\Camera.cs" />

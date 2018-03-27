@@ -168,6 +168,9 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ViewingController.cs" />
+    <Compile Include="Exceptions\BadGatewayException.cs" />
+    <Compile Include="Exceptions\UnauthorizedException.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
     <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\CamaraController.cs" />
     <Compile Include="Exceptions\WebApiException.cs" />
@@ -175,6 +178,7 @@
     <Compile Include="Filters\ModuloVBasicAuthenticationAttribute.cs" />
     <Compile Include="Filters\LogRequestResponseFilter.cs" />
     <Compile Include="Filters\ValidacionesExcepcionesHandler.cs" />
+    <Compile Include="Filters\ValidationModelAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

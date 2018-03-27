@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{B3FD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGTH.Dvtel.Mobile.Client", "SGTH.Dvtel.Mobile.Client\SGTH.Dvtel.Mobile.Client.csproj", "{5336B47A-8113-48BA-A067-C6D9394D9FB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGTH.Dvtel.Mobile.Client.Tests", "SGTH.Dvtel.Mobile.Client.Tests\SGTH.Dvtel.Mobile.Client.Tests.csproj", "{9341CA9B-38A9-4292-AB23-2D817B287834}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{5336B47A-8113-48BA-A067-C6D9394D9FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5336B47A-8113-48BA-A067-C6D9394D9FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5336B47A-8113-48BA-A067-C6D9394D9FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9341CA9B-38A9-4292-AB23-2D817B287834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9341CA9B-38A9-4292-AB23-2D817B287834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9341CA9B-38A9-4292-AB23-2D817B287834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9341CA9B-38A9-4292-AB23-2D817B287834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{8D299167-4FC8-47EA-9C22-0528A3A2493C} = {806822A4-1743-432C-A4A6-B2622790C585}
 		{464647D5-F327-459E-AD18-764EB8E61F6E} = {806822A4-1743-432C-A4A6-B2622790C585}
 		{5336B47A-8113-48BA-A067-C6D9394D9FB0} = {B3FDF959-1422-48F1-BD8E-938E0D75CDC8}
+		{9341CA9B-38A9-4292-AB23-2D817B287834} = {B3FDF959-1422-48F1-BD8E-938E0D75CDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0625D312-D33B-483F-BEBA-A134B94D0975}

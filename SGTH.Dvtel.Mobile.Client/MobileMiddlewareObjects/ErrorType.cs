@@ -1,7 +1,7 @@
 namespace SGTH.Dvtel.Mobile.Client.MobileMiddlewareObjects
 {
     public enum ErrorType
-    {
+    {        
         None,
         BadRequest,
         CameraNotAccessible,
@@ -11,6 +11,7 @@ namespace SGTH.Dvtel.Mobile.Client.MobileMiddlewareObjects
         CameraNotCached,
         InternalError,
         ArgumentError,
-        InvalidSession
+        InvalidSession,
+        Unknown
     }
 }

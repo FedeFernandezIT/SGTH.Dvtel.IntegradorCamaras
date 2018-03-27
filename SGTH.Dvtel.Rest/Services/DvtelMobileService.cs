@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using SGTH.Dvtel.Mobile.Client.Exceptions;
 using SGTH.Dvtel.Mobile.Client.MobileMiddlewareObjects;
+using SGTH.Dvtel.Rest.Exceptions;
+using SGTH.Dvtel.Rest.Extensions;
 
 namespace SGTH.Dvtel.Rest.Services
 {
@@ -18,40 +22,62 @@ namespace SGTH.Dvtel.Rest.Services
         public DvtelMobileService(IDvtelMobileAdapter mobile)
         {
             _mobile = mobile;
-            //IsAuthenticated = IsAuthenticatedAsync();
         }
-
-        public Task<bool> IsAuthenticated { get; private set; }
-
-        private async Task<bool> IsAuthenticatedAsync()
-        {
-            return await _mobile.Authenticate();
-        }
+        
 
         public async Task<Uri> StartLive(Guid camera, string compression)
         {
-            if (!await _mobile.Authenticate())
+            try
             {
-                throw new Exception();
+                await _mobile.Authenticate();
+
+                var streamUrLive = await _mobile.StartLive(camera, compression);
+                
+                return new Uri(streamUrLive);
             }
-            var streamUrLive = await _mobile.StartLive(camera, compression);
-            await _mobile.Logout();
-            return new Uri(streamUrLive);
+            catch (DvtelVmsException ex)
+            {
+                if (ex.Error == ErrorType.AuthorizationFailed)
+                {
+                    throw new UnauthorizedException(ex.CollectMessages());
+                }
+                else
+                {
+                    throw new BadGatewayException(ex.CollectMessages());
+                }
+            }
+            finally
+            {
+                await _mobile.Logout();
+            }
         }
 
         public async Task<List<Camera>> GetCameras()
-        {            
-            if (!await _mobile.Authenticate())
+        {
+            try
             {
-                throw new Exception();
+                await _mobile.Authenticate();
+
+                // Generamos un nueva List, para no perder los datos
+                // después de desconectarnos.
+                var cameras = _mobile.Cameras.ToList();                
+                return cameras;
             }
-
-            // Generamos un nueva List, para no perder los datos
-            // después de desconectarnos.
-            var cameras = _mobile.Cameras.ToList();
-
-            await _mobile.Logout();
-            return cameras;
+            catch (DvtelVmsException ex)
+            {
+                if (ex.Error == ErrorType.AuthorizationFailed)
+                {
+                    throw new UnauthorizedException(ex.CollectMessages());
+                }
+                else
+                {
+                    throw new BadGatewayException(ex.CollectMessages());
+                }
+            }
+            finally
+            {
+                await _mobile.Logout();
+            }            
         }
     }
 }
