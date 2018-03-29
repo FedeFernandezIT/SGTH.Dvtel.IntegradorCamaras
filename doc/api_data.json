@@ -23,8 +23,8 @@
     "url": "",
     "version": "0.0.0",
     "filename": "./doc/main.js",
-    "group": "C__Users_mledesma_Documents_integracion_de_camaras_net_DvTel_WebAPI_doc_main_js",
-    "groupTitle": "C__Users_mledesma_Documents_integracion_de_camaras_net_DvTel_WebAPI_doc_main_js",
+    "group": "C__Softlogia_STECH_Dvtel_Projects_SGTH_Dvtel_IntegradorCamaras_doc_main_js",
+    "groupTitle": "C__Softlogia_STECH_Dvtel_Projects_SGTH_Dvtel_IntegradorCamaras_doc_main_js",
     "name": ""
   },
   {
@@ -79,7 +79,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -134,7 +134,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -203,7 +203,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -258,7 +258,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -313,7 +313,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -355,7 +355,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -410,7 +410,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -481,7 +481,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -552,7 +552,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -623,7 +623,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -678,7 +678,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -733,7 +733,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -795,7 +795,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -857,7 +857,7 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
   },
   {
@@ -935,7 +935,301 @@
         }
       ]
     },
-    "filename": "./DvTelIntegradorCamaras/Controllers/CamaraController.cs",
+    "filename": "./SGTH.Dvtel.Rest/Controllers/CamaraController.cs",
     "groupTitle": "IntegradorCamaras"
+  },
+  {
+    "type": "GET",
+    "url": "api/dvtel/viewing/cameras",
+    "title": "Cameras",
+    "sampleRequest": [
+      {
+        "url": "http://148.244.123.138:17606/api/dvtel/viewing/cameras"
+      }
+    ],
+    "description": "<p>Obtiene listado de cámaras disponibles.</p>",
+    "version": "2.0.0",
+    "name": "Cameras",
+    "group": "Viewing",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Protocolo y datos de authorización.</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Request-Example:",
+        "content": "GET //api/dvtel/viewing/cameras HTTP/1.1\nHost: localhost:9100\nAuthorization: Basic feT33Ii9lLpVmnBSFr042mku",
+        "type": "url"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado del resultado de la solicitud.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "msg",
+            "description": "<p>Mensaje descriptivo del resultado de la solicitud.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Listado detallado de cámaras disponibles.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "bool",
+            "optional": false,
+            "field": "canPlayback",
+            "description": "<p>Si el usuario tiene privilegios para Reproducir un clip archivado.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "bool",
+            "optional": false,
+            "field": "canRecord",
+            "description": "<p>Si el usuario tiene privilegios para detener / iniciar la grabación manual en la cámara.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "guid",
+            "optional": false,
+            "field": "id",
+            "description": "<p>La propiedad Id. de la cámara.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "bool",
+            "optional": false,
+            "field": "isAccessible",
+            "description": "<p>El estado de accesibilidad de la cámara.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "bool",
+            "optional": false,
+            "field": "isGosth",
+            "description": "<p>Si la cámara es una escena &quot;offline&quot; (es decir, separada de la gestión de un Archiver).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "bool",
+            "optional": false,
+            "field": "isPTZEnabled",
+            "description": "<p>Si la capacidad PTZ de la cámara está habilitada.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "bool",
+            "optional": false,
+            "field": "isRecording",
+            "description": "<p>Si la cámara está grabando.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Nombre de la cámara.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "guid",
+            "optional": false,
+            "field": "siteId",
+            "description": "<p>El sitio principal de la cámara.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": \"Ok\",\n  \"msg\": \"La operación se realizó con éxito.\",\n  \"data\": [\n      {\n          \"CanPlayback\": true,\n          \"CanRecord\": true,\n          \"Description\": null,\n          \"Id\": \"c4f86f5d-6a0c-4845-a77a-a1d4893e3201\",\n          \"IsAccessible\": true,\n          \"IsGhost\": false,\n          \"IsPTZEnabled\": false,\n          \"IsRecording\": true,\n          \"Name\": \"4K Cubo\",\n          \"SiteId\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      {\n          \"CanPlayback\": true,\n          \"CanRecord\": true,\n          \"Description\": \"CAMARA DAHUA PTZ\",\n          \"Id\": \"fbb198d7-73d2-458c-8e2d-c9f400e779db\",\n          \"IsAccessible\": true,\n          \"IsGhost\": false,\n          \"IsPTZEnabled\": false,\n          \"IsRecording\": true,\n          \"Name\": \"CAMARA DAHUA\",\n          \"SiteId\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      {\n          \"CanPlayback\": true,\n          \"CanRecord\": true,\n          \"Description\": \"CAMARA DAHUA PTZ\",\n          \"Id\": \"7617ff98-47f5-40e8-a7b2-0ca3ac159132\",\n          \"IsAccessible\": true,\n          \"IsGhost\": false,\n          \"IsPTZEnabled\": true,\n          \"IsRecording\": true,\n          \"Name\": \"CAMARA DAHUA PTZ\",\n          \"SiteId\": \"00000000-0000-0000-0000-000000000000\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx | 5xx": [
+          {
+            "group": "Error 4xx | 5xx",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado del resultado de la solicitud.</p>"
+          },
+          {
+            "group": "Error 4xx | 5xx",
+            "type": "string",
+            "optional": true,
+            "field": "msg",
+            "description": "<p>Mensaje descriptivo del error de la solicitud.</p>"
+          },
+          {
+            "group": "Error 4xx | 5xx",
+            "type": "dynamic",
+            "optional": true,
+            "field": "data",
+            "description": "<p>Información adicional del error.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response: 502 Bad Gateway",
+          "content": "HTTP/1.1 502 Bad Gateway\n{\n  \"status\": \"Bad Gateway\",\n  \"msg\": \"Dvtel Vms Authenticate Error: Unknown. Error al enviar la solicitud. No es posible conectar con el servidor remoto. No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:8081.\",\n  \"data\": \"\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response: Bad Request",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"status\": \"Bad Request\",\n  \"msg\": \"La solicitud es inválida.\",\n  \"data\": [\n      \"El campo XXXX es obligatorio.\",\n      \"El campo XXXX es obligatorio.\"\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./SGTH.Dvtel.Rest/Controllers/ViewingController.cs",
+    "groupTitle": "Viewing"
+  },
+  {
+    "type": "GET",
+    "url": "api/dvtel/viewing/startlive/:camera",
+    "title": "StartLive",
+    "sampleRequest": [
+      {
+        "url": "http://148.244.123.138:17606/api/dvtel/viewing/startlive"
+      }
+    ],
+    "description": "<p>Obtiene la URL HTTP de <b>streaming</b> de video de una cámara particular.</p>",
+    "version": "2.0.0",
+    "name": "StartLive",
+    "group": "Viewing",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Protocolo y datos de authorización.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "guid",
+            "optional": false,
+            "field": "camera",
+            "description": "<p>Identificador único de la cámara.</br>Ejemplo: <code>550e8400-e29b-41d4-a716-446655440000</code></p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Request-Example:",
+        "content": "GET //api/dvtel/viewing/startlive/550e8400-e29b-41d4-a716-446655440000 HTTP/1.1\nHost: localhost:9100\nAuthorization: Basic feT33Ii9lLpVmnBSFr042mku",
+        "type": "url"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado del resultado de la solicitud.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": true,
+            "field": "msg",
+            "description": "<p>Mensaje descriptivo del resultado de la solicitud.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data",
+            "description": "<p>URL HTTP de streaming en vivo.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n  \"status\": \"Ok\",\n  \"msg\": \"La operación se realizó con éxito.\",\n  \"data\": {\n      \"CodRta\": \"00\",\n      \"NroTarjeta\": \"450799xxxxxx7787\",\n      \"Token\": \"Z3geSSzRL05KFnc/+/gZJVBIpf59zeTQzK+GQOs0PYg=\",\n      \"transactionId\": \"106\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx | 5xx": [
+          {
+            "group": "Error 4xx | 5xx",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado del resultado de la solicitud.</p>"
+          },
+          {
+            "group": "Error 4xx | 5xx",
+            "type": "string",
+            "optional": true,
+            "field": "msg",
+            "description": "<p>Mensaje descriptivo del error de la solicitud.</p>"
+          },
+          {
+            "group": "Error 4xx | 5xx",
+            "type": "dynamic",
+            "optional": true,
+            "field": "data",
+            "description": "<p>Información adicional del error.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response: Service Unavailable",
+          "content": "HTTP/1.1 503 Service Unavailable\n{\n  \"status\": \"Error\",\n  \"msg\": \"Mensaje descriptivo.\",\n  \"data\": \"\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response: Bad Request",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"status\": \"Bad Request\",\n  \"msg\": \"La solicitud es inválida.\",\n  \"data\": [\n      \"El campo XXXX es obligatorio.\",\n      \"El campo XXXX es obligatorio.\"\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./SGTH.Dvtel.Rest/Controllers/ViewingController.cs",
+    "groupTitle": "Viewing"
   }
 ]

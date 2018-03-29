@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Web.Http.Filters;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using SGTH.Dvtel.Rest.Exceptions;
 using SGTH.Dvtel.Rest.Extensions;
 using SGTH.Dvtel.Rest.Models;
@@ -26,9 +27,9 @@ namespace SGTH.Dvtel.Rest.Filters
                 response.Content = new StringContent(
                     JsonConvert.SerializeObject(new
                     {
-                        Status = CodeStatus.ERROR,
-                        Msg = "Ha ocurrido un error, comuníquese con el Administrador.",
-                        Data = actionExecutedContext.Exception.CollectMessages()
+                        status = CodeStatus.ERROR,
+                        msg = "Ha ocurrido un error, comuníquese con el Administrador.",
+                        data = actionExecutedContext.Exception.CollectMessages()
                     }), System.Text.Encoding.UTF8, "application/json");
             }
 
@@ -67,7 +68,7 @@ namespace SGTH.Dvtel.Rest.Filters
 
             response.Content =
                 new StringContent(
-                    JsonConvert.SerializeObject(new { Status = statusMessage, Msg = exception.Message, Data = "" }),
+                    JsonConvert.SerializeObject(new { status = statusMessage, msg = exception.Message, data = "" }),
                     System.Text.Encoding.UTF8, "application/json");
 
             return response;
