@@ -102,11 +102,16 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
                         return true; // Authenticated successfully
                     }
                     Utils.Trace("UnitedVmsProvider Authenticate Error: " + webResponse.Header.Error);
-                    throw new DvtelVmsException("Dvtel Vms Authenticate Error: " + webResponse.Header.Error, webResponse.Header.Error);
+                    var errorReason = webResponse.Header.Error == ErrorType.AuthorizationFailed
+                        ? "Credenciales inválidas o licencia vencida."
+                        : default(string);                    
+                    throw new DvtelVmsException($"Dvtel Vms Authenticate Error: {webResponse.Header.Error}. {errorReason}", webResponse.Header.Error);
                 }
             }
             catch (Exception ex)
             {
+                if (ex is DvtelVmsException) throw;
+                
                 Utils.Trace("UnitedVmsProvider Authenticate Error: " + ex.Message, ex);
                 throw new DvtelVmsException("Dvtel Vms Authenticate Error: " + ErrorType.Unknown, ex);
             }
@@ -144,6 +149,8 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
             }
             catch (Exception ex)
             {
+                if (ex is DvtelVmsException) throw;
+
                 Utils.Trace("UnitedVmsProvider Logout Error", ex);
                 throw new DvtelVmsException("Dvtel Vms Logout Error", ex);
             }
@@ -229,6 +236,8 @@ namespace SGTH.Dvtel.Mobile.Client.VideoProviders
             }
             catch (Exception ex)
             {
+                if (ex is DvtelVmsException) throw;
+
                 Utils.Trace("UnitedVmsProvider StartLive  Error", ex);
                 throw new DvtelVmsException("Dvtel Vms StartLive  Error", ex);
             }
