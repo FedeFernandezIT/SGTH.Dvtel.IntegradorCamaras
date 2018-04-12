@@ -18,6 +18,7 @@ namespace SGTH.Dvtel.Rest.Controllers
         {
             _integrador = new IntegradorCamaras();
         }
+
         public object ResultMethod(ModelResponseMethod result)
         {
             switch (result.Status)

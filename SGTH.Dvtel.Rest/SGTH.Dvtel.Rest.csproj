@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Controllers\ViewingController.cs" />
     <Compile Include="Exceptions\BadGatewayException.cs" />
     <Compile Include="Exceptions\UnauthorizedException.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\LoginManager.cs" />
     <Compile Include="Integrador\IIntegradorCamaras.cs" />
     <Compile Include="Integrador\IntegradorCamaras.cs" />
     <Compile Include="Models\ModelResponseMethod.cs" />

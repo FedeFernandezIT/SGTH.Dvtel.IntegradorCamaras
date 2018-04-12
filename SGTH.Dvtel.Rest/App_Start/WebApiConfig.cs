@@ -12,40 +12,27 @@ namespace SGTH.Dvtel.Rest
     {
         public static void Register(HttpConfiguration config)
         {
+            // Configuración y servicios de API web            
 
             config.Filters.Add(new ValidacionesExcepcionesHandler());
             //config.MessageHandlers.Add(new LogRequestResponseFilter());
 
             // Clear XML as Supported Media Type
-            config.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
-            //((Newtonsoft.Json.Serialization.DefaultContractResolver)config.Formatters.JsonFormatter.SerializerSettings.ContractResolver).IgnoreSerializableAttribute = true;
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Clear();            
 
             // Formating indent and camelCase for Json
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));            
-            //config.Formatters.Add(new JsonHalMediaTypeFormatter());                                    
-            //config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
-            // config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling  = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
 
+            // Rutas de API web
             config.MapHttpAttributeRoutes();            
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
-            );
-
-            // Configuración y servicios de API web
-
-            // Rutas de API web
-            //*config.MapHttpAttributeRoutes();
-
-            /*config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );*/            
+            );            
         }
     }
 }
